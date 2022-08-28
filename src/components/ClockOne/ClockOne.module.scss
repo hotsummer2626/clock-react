@@ -5,7 +5,6 @@
   align-items: center;
   .container {
     background: #2f363e;
-    min-height: 300px;
     border-radius: 20px;
     border-top-left-radius: 225px;
     border-top-right-radius: 225px;
@@ -17,8 +16,8 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      width: 250px;
-      height: 250px;
+      width: 280px;
+      height: 280px;
       background: #2f363e;
       border-radius: 50%;
       box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
@@ -33,7 +32,7 @@
         .number {
           position: absolute;
           transform: rotate(calc(360deg / -12 * var(--i)));
-          color: #595e69;
+          color: #767c88;
           font-size: 20px;
           font-weight: bold;
         }
@@ -46,7 +45,7 @@
         align-items: center;
         position: absolute;
         border-radius: 50%;
-        border: 2px solid #292e39;
+        border: 1px solid #1d1f27;
         &::before {
           content: "";
           position: absolute;
@@ -112,6 +111,8 @@
       }
     }
     .eClockWrapper {
+      display: flex;
+      justify-content: space-around;
       font-size: 20px;
       font-weight: bold;
       padding: 10px 20px;
@@ -120,6 +121,36 @@
       border: 2px solid rgba(0, 0, 0, 0.5);
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(255, 255, 255, 0.2),
         inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+      span {
+        display: inline-block;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        width: 10px;
+        &.hour,
+        &.minute,
+        &.second {
+          width: 35px;
+        }
+        &.hour,&:nth-child(2){
+          color: #ff2972;
+        }
+        &.minute,&:nth-child(4){
+          color: #fee800;
+        }
+        &.second{
+          color: #04fc43;
+        }
+        &.ampm{
+          color: #fff;
+          text-transform: uppercase;
+          text-align: right;
+          font-size: 12px;
+          height: 35px;
+          line-height: 35px;
+          width: 30px;
+        }
+      }
     }
   }
 }
